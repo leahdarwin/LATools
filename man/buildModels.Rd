@@ -12,7 +12,8 @@ buildModels(
   log_data,
   max_terms,
   models_n,
-  new_models_n
+  new_models_n,
+  logit
 )
 }
 \arguments{
@@ -30,6 +31,8 @@ buildModels(
 
 \item{new_models_n}{Number of models to be created at each iteration}
 
+\item{logit}{TRUE, FALSE Create logistic regression models rather than linear}
+
 \item{factor_data}{Path to factor data file in TSV format.}
 }
 \value{
@@ -39,5 +42,14 @@ A text output of all top models and iterations as well as summary statistics.
 Builds models using locating arrays
 }
 \examples{
-buildModels("LA/LA_LARGE.tsv", "FD/Factors_LARGE.tsv", "RE/responses_LARGE", "Throughput", "TRUE", 13, 50, 50)
+locatingArray_path = system.file("extdata", "programRepair_logit/LA.tsv", package="LATools")
+factorData_path = system.file("extdata", "programRepair_logit/factor_data.tsv", package="LATools")
+response_path = system.file("extdata", "programRepair_logit/Response", package="LATools")
+##EXAMPLE 1: Use logisitc regression model on software repair data set.
+buildModels(locatingArray_path, factorData_path, response_path, response_column = "better_than_original", logit = TRUE)
+##EXAMPLE 2: Use linear regression model on network optimization data set.
+locatingArray_path = system.file("extdata", "network_linear/LA.tsv", package="LATools")
+factorData_path = system.file("extdata", "network_linear/factor_data.tsv", package="LATools")
+response_path = system.file("extdata", "network_linear/Response", package="LATools")
+buildModels(locatingArray_path, factorData_path, response_path, response_column = "MOS", logit = FALSE)
 }

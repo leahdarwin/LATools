@@ -1,0 +1,25 @@
+24							
+band	2	0	2.4	5			
+ROHC	2	0	0	1			
+sensing	2	0	0	1			
+channel	3	0	1/36	6/40	11/44		
+qdisc	3	0	pfifo	bfifo	pfifo_fast		
+udp_rmem_min	3	0	0.019231	0.1	0.5		
+udp_wmem_min	3	0	0.019231	0.1	0.5		
+udp_mem_min	3	0	0.25	0.5	0.75		
+codec	3	0	opus	speex	speex		
+frameLen	3	0	20	40	60		
+ipfrag_low_thresh	4	0	0.25	0.5	0.75	1	
+rmem_max	4	0	2304	10418	47105	212992	
+wmem_max	4	0	4608	16537	59349	212992	
+udp_mem_max	4	0	95	949	9490	94896	
+codecBitrate	4	0	7600/7750	16800	24000/23800	34000/34200	
+rate	5	0	6	9	12	24	36
+txpower	5	0	1/7	2/8	4/10	7/13	10/16
+mtu	5	0	256	512	1024	1280	1500
+txqueuelen	5	0	10	50	100	500	1000
+ipfrag_high_thresh	5	0	16384	65536	262144	1048576	4194304
+rmem_default	5	0	0	0.25	0.5	0.75	1
+wmem_default	5	0	0	0.25	0.5	0.75	1
+udp_mem_pressure	5	0	0	0.33338	0.5	0.75	1
+intCOR	5	0	0.1	0.25	0.5	0.75	0.9
